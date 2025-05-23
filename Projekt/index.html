@@ -100,5 +100,79 @@
     &copy; 2025 Retro Game Dev — stworzone z nostalgią 💾
   </footer>
 
+<!-- Sekcja komentarzy -->
+<div class="comments-section">
+  <h2>Komentarze</h2>
+  <div id="comments-list"></div>
+  <textarea id="comment-input" placeholder="Napisz komentarz..." rows="3"></textarea>
+  <br>
+  <button onclick="addComment()">Dodaj komentarz</button>
+</div>
+
+<script>
+function addComment() {
+  const input = document.getElementById('comment-input');
+  const list = document.getElementById('comments-list');
+  if (input.value.trim() !== "") {
+    const comment = document.createElement('div');
+    comment.className = 'comment';
+    comment.textContent = input.value;
+    list.appendChild(comment);
+    input.value = "";
+  }
+}
+</script>
+
+<style>
+.comments-section {
+  margin: 40px auto 20px auto;
+  max-width: 500px;
+  background: rgba(0,0,0,0.7);
+  padding: 20px;
+  border-radius: 12px;
+  color: #0f0;
+  font-family: 'Press Start 2P', monospace;
+  box-shadow: 0 0 12px #0f0;
+}
+#comment-input {
+  width: 100%;
+  font-family: inherit;
+  font-size: 14px;
+  margin-top: 10px;
+  border-radius: 6px;
+  border: 1px solid #0f0;
+  padding: 8px;
+  background: #111;
+  color: #0f0;
+  box-shadow: 0 0 6px #0f0 inset;
+}
+.comment {
+  margin: 10px 0;
+  padding: 8px 12px;
+  background: #111;
+  border-radius: 6px;
+  font-size: 13px;
+  border: 1px solid #0f0;
+  box-shadow: 0 0 6px #0f0;
+}
+.comments-section button {
+  margin-top: 10px;
+  padding: 8px 18px;
+  border: 2px solid #0f0;
+  border-radius: 6px;
+  background: transparent;
+  color: #0f0;
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  box-shadow: 0 0 8px #0f0;
+  transition: background 0.2s, color 0.2s;
+}
+.comments-section button:hover {
+  background: #0f0;
+  color: #000;
+}
+</style>
+
 </body>
 </html>
