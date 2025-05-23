@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Retro Game Project</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: #0f0;
+      font-family: 'Press Start 2P', cursive;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 30px;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      text-shadow: 0 0 8px lime;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      margin-bottom: 30px;
+      color: #7fff7f;
+    }
+
+    .image-preview {
+      max-width: 700px;
+      width: 100%;
+      border: 2px solid #0f0;
+      box-shadow: 0 0 15px lime;
+      margin-bottom: 25px;
+      border-radius: 10px;
+    }
+
+    .description {
+      max-width: 800px;
+      background-color: #111;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(0, 255, 0, 0.5);
+      margin-bottom: 30px;
+    }
+
+    .nav-buttons a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 24px;
+      border: 2px solid #0f0;
+      border-radius: 8px;
+      color: #0f0;
+      text-decoration: none;
+      background-color: transparent;
+      font-size: 14px;
+      box-shadow: 0 0 8px lime;
+      transition: all 0.3s ease;
+    }
+
+    .nav-buttons a:hover {
+      background-color: #0f0;
+      color: #000;
+      box-shadow: 0 0 15px lime;
+    }
+
+    footer {
+      margin-top: 40px;
+      color: #666;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎮 Retro Game Project</h1>
+  <p class="subtitle">Snake, Pac-Man i menu w klimacie automatów arcade</p>
+
+  <img src="cb2ff5c2-bca9-44a9-9b8c-c447220becce.png" alt="Podgląd projektu" class="image-preview" />
+
+  <div class="description">
+    <p>
+      Projekt przedstawia zestaw kultowych gier przeglądarkowych: <strong>Snake</strong> i <strong>Pac-Man</strong>, opakowanych w spójne, stylowe <strong>menu w klimacie retro arcade</strong>.
+      Celem było stworzenie wciągającej prezentacji z użyciem wyłącznie HTML, CSS i JavaScript – bez frameworków i z dużą dbałością o klimat lat 80/90.
+    </p>
+    <p>
+      Neonowe przyciski, pikselowa czcionka i tło przypominające stare ekrany CRT to nie tylko estetyka – to powrót do klasyki gier, które bawiły nas zanim poznaliśmy open-worldy i ray tracing.
+    </p>
+  </div>
+
+  <div class="nav-buttons">
+    <a href="menu.html">📋 Opis Menu</a>
+    <a href="snake-pacman.html">🐍 Opis Snake i Pac-Man</a>
+  </div>
+
+  <footer>
+    &copy; 2025 Retro Game Dev — stworzone z nostalgią 💾
+  </footer>
+
+</body>
+</html>

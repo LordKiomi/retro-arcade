@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pac-Man</title>
+    <link rel="stylesheet" href="PacMan.css"> <!-- Podłączony plik CSS -->
+</head>
+<body>
+    <!-- Formularz START -->
+     
+<div id="start-form" class="start-form">
+    <p>Wybierz poziom trudności i rozpocznij grę!</p>
+    <select id="difficulty-select">
+        <option value="easy">Łatwy</option>
+        <option value="medium" selected>Średni</option>
+        <option value="hard">Trudny</option>
+    </select>
+    <button id="start-button">START</button>
+    <button onclick="window.location.href='index.html'">↩️ Wróć do menu</button>
+
+    <!-- NOWY PRZYCISK -->
+<button id="other-game-button">🐍 Zagraj w Snake'a</button>
+
+<script>
+  // Ten kod musi być PO przycisku lub w window.onload / DOMContentLoaded
+  document.getElementById('other-game-button').addEventListener('click', () => {
+    window.location.href = 'Snake.html';
+  });
+</script>
+</div>
+    <div class="container">
+        <div class="left-panel">
+            <h1>Pac-Man</h1>
+            <div id="game"></div>
+            <div class="instructions">Użyj klawiszy strzałek, aby poruszać Pac-Manem</div>
+        </div>
+        <div class="right-panel">
+            <h2>Wynik</h2>
+            <div class="score" id="score">0</div>
+            <h2>Życia</h2>
+            <div class="lives" id="lives"></div>
+        </div>
+        <div id="game-over" class="game-over hidden">Game Over</div>
+        <div id="restart-form" class="restart-form hidden">
+            <p>Chcesz zagrać jeszcze raz?</p>
+            <button id="restart-yes">Tak</button>
+            <button id="restart-no">Nie</button>
+        </div>
+    </div>
+
+    <div class="gif-bg">
+  <img src="https://media.giphy.com/media/xT0xeJpnrWC4XWblEk/giphy.gif" class="gif floating1">
+  <img src="https://media.giphy.com/media/l3q2K5jinAlChoCLS/giphy.gif" class="gif floating2">
+  <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHZkYnc3bmR2OGhjY3ltZXBoZHFsN29kaGZ5Z25nNDJzM3doaHpqeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/cr9vIO7NsP5cY/giphy.gif" class="gif floating3">
+</div>
+
+    <script src="PacMan.js"></script> <!-- Podłączony plik JS -->
+</body>
+</html>

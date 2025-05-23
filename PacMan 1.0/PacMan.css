@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Styl dla całej strony */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000; /* Czarne tło */
+    color: #fff; /* Biały tekst */
+    font-family: 'Press Start 2P', cursive; /* Styl retro */
+    margin: 0;
+    position: relative;
+}
+
+/* Formularz START */
+.start-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #111;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.start-form p {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.start-form button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.start-form button:hover {
+    background-color: #555;
+}
+
+/* Panel główny */
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+/* Panel po lewej stronie */
+.left-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+}
+
+/* Tytuł gry */
+h1 {
+    margin: 20px;
+    font-size: 48px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Delikatny cień */
+}
+
+/* Siatka gry */
+#game {
+    display: grid;
+    grid-template-columns: repeat(21, 20px); /* 21 kolumn */
+    grid-template-rows: repeat(23, 20px); /* 23 wiersze */
+    gap: 2px;
+}
+
+/* Ściany */
+.wall {
+    background-color: blue; /* Niebieski kolor */
+    border: 2px solid #000; /* Czarna obwódka */
+}
+
+/* Puste komórki */
+.empty {
+    background-color: black; /* Czarne tło */
+}
+
+/* Punkty do zbierania */
+.point {
+    background-color: yellow; /* Żółty kolor punktów */
+    border-radius: 50%; /* Okrągły kształt */
+    width: 10px;
+    height: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+/* Pac-Man */
+.pacman {
+    background: url('PacManMen.gif') no-repeat center; /* Obraz Pac-Mana */
+    background-size: contain; /* Dopasowanie obrazu */
+    width: 100%;
+    height: 100%;
+}
+
+/* Duchy */
+.ghost {
+    background: url('ghost.gif') no-repeat center; /* Obraz ducha */
+    background-size: contain; /* Dopasowanie obrazu */
+    width: 100%;
+    height: 100%;
+}
+
+/* Panel po prawej stronie */
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #111; /* Ciemnoszare tło */
+    padding: 20px;
+    border-radius: 10px; /* Zaokrąglone rogi */
+}
+
+/* Nagłówek w panelu po prawej */
+.right-panel h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Wynik */
+.score {
+    font-size: 36px; /* Większy tekst dla wyniku */
+}
+
+/* Instrukcje */
+.instructions {
+    margin-top: 20px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.hidden {
+    display: none; /* Ukrywa element */
+}
+
+/* Styl dla sekcji Game Over */
+.game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 64px;
+    color: red;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    z-index: 9999; /* Ustaw najwyższą widoczność */
+    font-family: 'Press Start 2P', cursive;
+    display: none; /* Ukrycie domyślne */
+    background: rgba(0, 0, 0, 0.8); /* Opcjonalne półprzezroczyste tło */
+    padding: 20px; /* Opcjonalne odstępy wewnętrzne */
+    border-radius: 10px; /* Opcjonalne zaokrąglenie */
+}
+
+
+.lives {
+    display: flex; /* Wyświetlenie żyć obok siebie */
+    gap: 5px; /* Odstęp między ikonami */
+    margin-top: 10px; /* Odstęp od wyniku */
+}
+
+.lives img {
+    width: 30px; /* Szerokość obrazka */
+    height: 30px; /* Wysokość obrazka */
+}
+
+.restart-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #111;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.restart-form p {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.restart-form button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.restart-form button:hover {
+    background-color: #555;
+}
+
+#difficulty-select {
+    margin: 10px 0;
+    padding: 5px;
+    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.fruit.truskawka {
+    background-image: url('strawberry.png'); /* Ścieżka do obrazka truskawki */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 20px;
+    height: 20px;
+    margin: auto;
+}
+
+.fruit.wisnia {
+    background-image: url('cherry.png'); /* Ścieżka do obrazka wiśni */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 20px;
+    height: 20px;
+    margin: auto;
+}
+
+.start-button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.start-button:hover {
+    background-color: #555;
+}
+
+.snake-button {
+    margin-top: 10px;
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: green;
+    color: #fff;
+    border: 3px solid #0f0;
+    border-radius: 8px;
+    font-family: 'Press Start 2P', cursive;
+    text-shadow: 1px 1px #000;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+}
+
+.snake-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #0f0;
+    background-color: darkgreen;
+}
+
+.gif-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.gif {
+  position: absolute;
+  width: 80px;
+  opacity: 0.4;
+  filter: drop-shadow(0 0 10px lime);
+}
+
+.floating1 {
+  top: 20%;
+  left: -100px;
+  animation: fly1 15s linear infinite;
+}
+
+.floating2 {
+  top: 60%;
+  left: 110%;
+  animation: fly2 20s linear infinite;
+}
+
+.floating3 {
+  top: 80%;
+  left: -150px;
+  animation: fly3 25s linear infinite;
+}
+
+@keyframes fly1 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(120vw); }
+}
+
+@keyframes fly2 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-130vw); }
+}
+
+@keyframes fly3 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(150vw); }
+}
